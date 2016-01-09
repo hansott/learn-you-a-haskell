@@ -40,6 +40,7 @@ calculateSumOf list = if null list
 -- Rewrite with pattern-matching (looks much cleaner):
 patternMatchingSum :: [Int] -> Int
 patternMatchingSum [] = 0
+patternMatchingSum (element:[]) = element
 patternMatchingSum list = head list + patternMatchingSum (tail list)
 
 -- Returns a list reversed
