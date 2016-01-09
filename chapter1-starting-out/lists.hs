@@ -37,6 +37,11 @@ calculateSumOf list = if null list
                         then getTheFirstElementOf list
                       else getTheFirstElementOf list + calculateSumOf (getTheTailOf list)
 
+-- Rewrite with pattern-matching (looks much cleaner):
+patternMatchingSum :: [Int] -> Int
+patternMatchingSum [] = 0
+patternMatchingSum list = head list + patternMatchingSum (tail list)
+
 -- Returns a list reversed
 -- getReversedName "Hans Ott" returns "ttO snaH"
 getReversedName name = reverse name
